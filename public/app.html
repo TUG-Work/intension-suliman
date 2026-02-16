@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>In/Tension App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>In/Tension App</h1>
+      <div class="row">
+        <div class="col"><input id="api-base" placeholder="API Base" value="http://127.0.0.1:3000" /></div>
+        <div class="col"><select id="project-select"></select></div>
+        <div class="col"><select id="session-select"></select></div>
+        <div class="col"><button id="logout" class="secondary">Logout</button></div>
+      </div>
+      <div id="status" class="small"></div>
+    </div>
+
+    <div class="tabbar">
+      <div class="tab active" data-tab="projects">Projects</div>
+      <div class="tab" data-tab="continuums">Continuums</div>
+      <div class="tab" data-tab="sessions">Sessions</div>
+      <div class="tab" data-tab="participants">Participants</div>
+      <div class="tab" data-tab="presenter">Presenter</div>
+      <div class="tab" data-tab="exports">Exports</div>
+    </div>
+
+    <div id="tab-projects" class="card">
+      <h3>Create Project</h3>
+      <div class="row">
+        <div class="col"><input id="project-name" placeholder="Project name" /></div>
+        <div class="col"><input id="project-min" placeholder="Min integer" value="-5" /></div>
+        <div class="col"><input id="project-max" placeholder="Max integer" value="5" /></div>
+        <div class="col"><button id="create-project">Create</button></div>
+      </div>
+      <div id="projects-list"></div>
+    </div>
+
+    <div id="tab-continuums" class="card hidden">
+      <h3>Add Continuum</h3>
+      <div class="row">
+        <div class="col"><input id="c-title" placeholder="Title" /></div>
+        <div class="col"><input id="c-left" placeholder="Left aim" /></div>
+        <div class="col"><input id="c-right" placeholder="Right aim" /></div>
+      </div>
+      <div class="row">
+        <div class="col"><input id="c-left-desc" placeholder="Left description" /></div>
+        <div class="col"><input id="c-right-desc" placeholder="Right description" /></div>
+        <div class="col"><button id="create-continuum">Add</button></div>
+      </div>
+      <div id="continuums-list"></div>
+    </div>
+
+    <div id="tab-sessions" class="card hidden">
+      <h3>Sessions</h3>
+      <div class="row">
+        <div class="col"><button id="create-baseline">Create Baseline</button></div>
+        <div class="col"><button id="create-comparison" class="secondary">Create Comparison</button></div>
+      </div>
+      <div id="sessions-list"></div>
+    </div>
+
+    <div id="tab-participants" class="card hidden">
+      <h3>Invite Participant</h3>
+      <div class="row">
+        <div class="col"><input id="invite-email" placeholder="email@domain.com" /></div>
+        <div class="col"><button id="send-invite">Send Invite</button></div>
+      </div>
+      <div id="invite-link" class="small"></div>
+      <div id="participants-list"></div>
+    </div>
+
+    <div id="tab-presenter" class="card hidden">
+      <h3>Results</h3>
+      <div id="presenter-results"></div>
+    </div>
+
+    <div id="tab-exports" class="card hidden">
+      <h3>Export</h3>
+      <div class="row">
+        <div class="col"><button id="export-csv">Download CSV</button></div>
+        <div class="col"><button id="export-pdf" class="secondary">Download PDF</button></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
