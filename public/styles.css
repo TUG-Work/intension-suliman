@@ -1,12 +1,28 @@
 :root {
-  --bg: #f4efe6;
-  --ink: #1b1f2a;
-  --panel: #fffdf8;
-  --line: #d8cdb8;
-  --accent: #1e88e5;
-  --accent-2: #ef6c00;
+  /* TUG Brand Colors - Feb 2024 */
+  --eclipse: #1b1d18;
+  --eclipse-medium: #3d4a41;
+  --eclipse-light: #8c9b98;
+  --bg-light: #f3f3f3;
+  --breathe: #e71e10;
+  
+  /* PASS Process */
+  --us: #633162;
+  --us-medium: #7c3f7a;
+  --us-light: #a177a0;
+  --them: #327492;
+  --them-medium: #469dc6;
+  --them-light: #9acfef;
+  
+  /* Semantic mappings */
+  --bg: var(--bg-light);
+  --ink: var(--eclipse);
+  --panel: #ffffff;
+  --line: var(--eclipse-light);
+  --accent: var(--them);
+  --accent-2: var(--us);
   --ok: #2e7d32;
-  --danger: #c62828;
+  --danger: var(--breathe);
 }
 * { box-sizing: border-box; }
 body {
@@ -29,11 +45,17 @@ h1, h2, h3 { margin: 8px 0; }
 .small { font-size: 12px; color: #545b69; }
 .tabbar { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
 .tab { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
-.tab.active { border-color: var(--accent); color: var(--accent); }
+.tab.active { border-color: var(--eclipse); color: var(--eclipse); background: var(--bg-light); font-weight: 600; }
 .hidden { display: none; }
 .list-item { border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-top: 8px; background: #fff; }
 .scale { position: relative; height: 22px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-.dot { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--accent); }
-.dot.avg { background: var(--accent-2); width: 12px; height: 12px; }
+.dot { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--them-medium); }
+.dot.avg { background: var(--us); width: 12px; height: 12px; border: 2px solid var(--panel); box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
 .vote-grid { display: grid; grid-template-columns: repeat(11, 1fr); gap: 6px; margin: 10px 0; }
-.vote-grid button.active { background: var(--ok); }
+.vote-grid button.active { background: var(--them); }
+.vote-grid button:hover { background: var(--them-light); color: var(--eclipse); }
+
+/* TUG branding */
+h1 { color: var(--eclipse); }
+a { color: var(--them); }
+a:hover { color: var(--them-medium); }
